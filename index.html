@@ -1,1 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CHARIZAD</title>
+    <!-- Bootstrap -->
+	<link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+	<link href="style.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+  	<!-- body code goes here -->
+    <div class="container-fluid top">
+	  <div class="row">
+	    <div class="col-lg- top1"></div>
+	    <h1>CHARIZAD</h1>
+	    <div class="col-lg-9 top2">&nbsp;&nbsp;</div>
+		  <h1>DESCUBRE AL POKEMON QUE HAY EN EL QR</h1>
+      </div>
+    </div>
+  <div class="container-fluid topnav"></div>
+  <div class="container-fluid banner">
+	  <div class="row">
+	    <img src="imagen/download.png" class="img-fluid" alt="Placeholder image">
+	    <div class="col-lg-4 banner1"></div>
+	    <img src="imagen/charizad-4096.png" class="img-fluid" alt="Placeholder image">
+	    <div class="col-lg-4 banner2"></div>
+	    <div class="col-lg-4 banner3"></div>
+    </div>
+  </div>
+  <div class="container-fluid content"></div>
+  <div class="container-fluid bottomnav">
+	  <div class="row">
+	    <div class="col-lg-4 bottomnav1"></div>
+	    <div class="col-lg-4 bottomnav2"></div>
+	    <div class="col-lg-4 bottomnav3"></div>
+		  <h1>NO TIENE EL MEJOR DISEÑO PERO ES FUNCIONAL</h1>
+    </div>
+  </div>
+  <div class="container-fluid footer"></div>
+	<html>
+    <head>
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+        <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
+    </head>
 
+    <body style="margin: 0; overflow: hidden;">
+        <a-scene
+            vr-mode-ui="enabled: false;"
+            loading-screen="enabled: false;"
+            renderer="logarithmicDepthBuffer: true;"
+            arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
+            id="scene"
+            embedded
+            gesture-detector
+        >
+            <a-assets>
+                <a-asset-item
+                    id="animated-asset"
+                    src="assets/asset.glb"
+                ></a-asset-item>
+            </a-assets>
+
+            <a-marker
+                id="animated-marker"
+                type="pattern"
+                preset="custom"
+                url="assets/marker.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                id="markerA"
+            >
+                <a-entity
+                    id="bowser-model"
+                    scale="0.040334309448169764 0.040334309448169764 0.040334309448169764"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#animated-asset"
+                    class="clickable"
+                    gesture-handler
+                ></a-entity>
+            </a-marker>
+
+            <a-entity camera></a-entity>
+        </a-scene>
+    </body>
+	
+</html>
+  
+	  
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+	<script src="js/jquery-3.4.1.min.js"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/popper.min.js"></script> 
+  <script src="js/bootstrap-4.4.1.js"></script>
+  </body>
+</html>
